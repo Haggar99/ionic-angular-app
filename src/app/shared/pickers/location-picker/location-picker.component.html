@@ -1,0 +1,20 @@
+<div class="border">
+  <ion-spinner 
+  color="primary"
+  *ngIf="isLoading"></ion-spinner>
+  <ion-img 
+  role="button"
+  (click)="onPickLocation()"
+  *ngIf="(imagePi && !isLoading) && showPreview"
+  class="imageMap"
+  [src]="imagePi"></ion-img>
+    <ion-button 
+    *ngIf="!imagePi && !isLoading"
+    color="primary" (click)="onPickLocation()">
+      <ion-icon name="map" slot="start"></ion-icon>
+      <ion-label>Select Location</ion-label>
+    </ion-button>
+</div>
+<!-- <ion-content *ngIf="addressPicket">
+  <ion-label>Votre adresse est {{addressPicket}} </ion-label>
+</ion-content> -->
